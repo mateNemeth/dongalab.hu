@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections",
+  "info": {
+    "name": "Sections",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "private": false
+    },
+    "sectionId": {
+      "type": "string",
+      "unique": true
+    },
+    "content": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.hero"
+      ]
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "unique": false
+    }
+  }
+}
