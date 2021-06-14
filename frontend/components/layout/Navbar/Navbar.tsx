@@ -1,20 +1,9 @@
 import { useEffect, useState } from 'react'
 import { throttle } from 'utils/throttle'
 import { NavbarProps, NavLinkProps } from 'model/navbar'
+import { scrollTo } from 'utils/scrollTo'
 
 const NavLink = ({ navLink, active }: { navLink: NavLinkProps; active: boolean }): JSX.Element => {
-  const scrollTo = (scrollingElement: Element, target: HTMLElement, duration = 600) => {
-    if (duration <= 0) return
-    const difference = target.offsetTop - scrollingElement.scrollTop
-    const perTick = (difference / duration) * 10
-
-    setTimeout(function () {
-      scrollingElement.scrollTop = scrollingElement.scrollTop + perTick
-      if (scrollingElement.scrollTop === target.offsetTop) return
-      scrollTo(scrollingElement, target, duration - 10)
-    }, 10)
-  }
-
   const handleClick = () => {
     const target = document.getElementById(navLink.sectionId)
     const { scrollingElement } = document
@@ -24,7 +13,7 @@ const NavLink = ({ navLink, active }: { navLink: NavLinkProps; active: boolean }
 
   return (
     <li>
-      <button className="focus:outline-none" onClick={handleClick}>
+      <button className="focus:outline-none focus:ring focus:ring-yellow-500 focus:ring-opacity-20" onClick={handleClick}>
         <span
           className={
             'px-3 py-2 flex items-center font-bold leading-snug hover:opacity-75' +

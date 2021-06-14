@@ -8,20 +8,21 @@ module.exports = {
           light: "#fcebd1",
           dark: "#ce800c",
           hero: "#f90"
-        }
+        },
       },
       fontFamily: {
         "annie": ["Annie Use Your Telescope", "cursive"]
       },
-      fontSize: {
-        '5xl': ['4rem', {
-          letterSpacing: '0.15em',
-          lineHeight: 'unset'
-        }],
-        '7xl': ['8rem', {          
-          letterSpacing: '0.15em',
-          lineHeight: 'unset'
-        }]
+      boxShadow: {
+        "articleList-sm": "0 0 1rem #ffd494",
+        "articleList-lg": "0 0 2rem #ffd494",
+        "article-img": "0 0 15px rgb(0 0 0 / 70%)"
+      },
+      maxWidth: {
+        "article-img": "400px"
+      },
+      transitionProperty: {
+         'height': 'height',
       }
     },
   },

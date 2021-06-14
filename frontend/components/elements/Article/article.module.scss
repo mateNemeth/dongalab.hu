@@ -1,0 +1,82 @@
+.figureBorder {
+  border-top: 2px dotted theme('colors.cream.light');
+  border-bottom: 2px dotted theme('colors.cream.light');
+}
+
+.dynamicContainer {
+  text-align: left;
+  
+  h3 {
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+    font-weight: 700;
+  }
+
+  p {
+    padding: 0.5rem 0;
+  }
+
+  ul > li {
+    padding: 0.25rem 0;
+    &::before {
+      content: "\2022";
+      color: #ce800c;
+      font-size: 1em;
+      margin-right: 0.5rem;
+      font-weight: bold;
+    }
+
+    ul > li{
+      padding: 0.5rem 0 0.5rem 2rem;
+      
+      &::before {
+        content: "";
+        font-size: 0;
+        margin-right: unset;
+      }
+    }
+  }
+
+  figure {
+    @extend .figureBorder;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin: 0.75rem auto;
+    padding: 0.5rem 0;
+
+    @media (min-width: theme('screens.md')) {
+      max-width: 75%;
+    }
+
+    @media (min-width: theme('screens.lg')) {
+      max-width: 50%;
+    }
+
+    img {
+      display: block;
+      width: 85%;
+      max-width: 400px;
+      height: auto;
+      margin: 0 auto;
+
+      @media (min-width: theme('screens.md')) {
+        max-width: 100%;
+      }
+    }
+
+    figcaption {
+      font-size: 0.7rem;
+      width: 85%;
+      position: absolute;
+      bottom: 0.5rem;
+      left: 7.5%;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      padding: 0.5rem;
+      font-style: italic;
+      text-align: center;
+    }
+  }
+}
