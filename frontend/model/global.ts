@@ -1,5 +1,3 @@
-import { Section } from './sections'
-
 export interface ImageFormatProps {
   name: string
   hash: string
@@ -34,18 +32,6 @@ export interface ImageProps {
   provider: string
   provider_metadata: null | unknown
 }
-
-export interface NavLinkProps {
-  id: number
-  label: string
-  section: Section
-}
-
-export interface NavbarProps {
-  navlinks: NavLinkProps[]
-  logo: ImageProps
-}
-
 export interface GlobalProps {
-  navbar: NavbarProps
+  logo: ImageProps
 }

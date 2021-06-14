@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_elements_article_lists",
+  "info": {
+    "name": "article_list",
+    "icon": "newspaper"
+  },
+  "options": {},
+  "attributes": {
+    "article": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.article"
+    }
+  }
+}

@@ -25,7 +25,8 @@
     "content": {
       "type": "dynamiczone",
       "components": [
-        "elements.hero"
+        "elements.hero",
+        "elements.article-list"
       ]
     },
     "order": {

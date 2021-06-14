@@ -12,10 +12,15 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "navbar": {
-      "type": "component",
-      "repeatable": false,
-      "component": "layout.navbar"
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }

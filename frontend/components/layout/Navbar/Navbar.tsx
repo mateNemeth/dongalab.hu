@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { NavbarProps, NavLinkProps } from '../../../model/global'
 import { throttle } from 'utils/throttle'
+import { NavbarProps, NavLinkProps } from 'model/navbar'
 
 const NavLink = ({ navLink, active }: { navLink: NavLinkProps; active: boolean }): JSX.Element => {
   const scrollTo = (scrollingElement: Element, target: HTMLElement, duration = 600) => {
@@ -16,7 +16,7 @@ const NavLink = ({ navLink, active }: { navLink: NavLinkProps; active: boolean }
   }
 
   const handleClick = () => {
-    const target = document.getElementById(navLink.section.sectionId)
+    const target = document.getElementById(navLink.sectionId)
     const { scrollingElement } = document
     if (!target || !scrollingElement) return
     scrollTo(scrollingElement, target, 600)
@@ -31,7 +31,7 @@ const NavLink = ({ navLink, active }: { navLink: NavLinkProps; active: boolean }
             (active ? ' border-b-2 border-cream-dark' : '')
           }
         >
-          {navLink.label}
+          {navLink.name}
         </span>
       </button>
     </li>
@@ -40,9 +40,8 @@ const NavLink = ({ navLink, active }: { navLink: NavLinkProps; active: boolean }
 
 const Navbar = ({ navData }: { navData: NavbarProps }): JSX.Element => {
   const [navbarOpen, setNavbarOpen] = useState(false)
-  const sectionIds = navData.navlinks.map((l) => l.section.sectionId)
+  const sectionIds = navData.navlinks.map((l) => l.sectionId)
   const [activeSection, setActiveSection] = useState(sectionIds[0] ?? null)
-  const sorted = navData.navlinks.sort((a, b) => a.section.order - b.section.order)
 
   const handleScrollPositionChanged = throttle(() => {
     const sections: HTMLElement[] = []
@@ -93,8 +92,8 @@ const Navbar = ({ navData }: { navData: NavbarProps }): JSX.Element => {
         </div>
         <div className={'md:flex w-full pt-4 md:w-auto md:pt-0 flex-grow items-center' + (navbarOpen ? ' flex' : ' hidden')}>
           <ul className="flex flex-col md:flex-row list-none md:ml-auto">
-            {sorted.map((link) => (
-              <NavLink navLink={link} key={link.id} active={activeSection === link.section.sectionId} />
+            {navData.navlinks.map((link) => (
+              <NavLink navLink={link} key={link.id} active={activeSection === link.sectionId} />
             ))}
           </ul>
         </div>
