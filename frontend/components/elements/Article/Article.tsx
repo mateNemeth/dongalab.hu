@@ -11,7 +11,20 @@ const Article = ({ article, odd }: { article: ArticleElement; odd: boolean }): J
   const ref = useRef<HTMLDivElement>(null)
 
   const renderArticleDetails = (): JSX.Element => {
-    return <div className={styles.dynamicContainer} dangerouslySetInnerHTML={{ __html: article.body }}></div>
+    return (
+      <>
+        <div className={styles.dynamicContainer} dangerouslySetInnerHTML={{ __html: article.body }}></div>
+        <button
+          onClick={handleToggleDetails}
+          disabled={animating}
+          className="my-4 mx-auto bg-cream-dark text-white py-2 px-4 rounded-lg focus:outline-none focus:ring focus:ring-yellow-600 focus:ring-opacity-30 border-cream-dark-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+          </svg>
+        </button>
+      </>
+    )
   }
 
   const handleToggleDetails = () => {
