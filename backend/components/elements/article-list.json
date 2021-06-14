@@ -2,14 +2,19 @@
   "collectionName": "components_elements_article_lists",
   "info": {
     "name": "article_list",
-    "icon": "newspaper"
+    "icon": "newspaper",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "article": {
+    "articles": {
       "type": "component",
       "repeatable": true,
       "component": "elements.article"
+    },
+    "title": {
+      "type": "string",
+      "required": true
     }
   }
 }

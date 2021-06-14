@@ -8,7 +8,22 @@ export interface HeroElement {
   __component: 'elements.hero'
 }
 
-export type SectionContent = HeroElement
+export interface ArticleElement {
+  id: number
+  title: string
+  summary: string
+  article_image: ImageProps
+  body: string
+}
+
+export interface ArticleListElement {
+  id: number
+  title: string
+  articles: ArticleElement[]
+  __component: 'elements.article-list'
+}
+
+export type SectionContent = HeroElement | ArticleListElement
 
 export interface Section {
   id: number
