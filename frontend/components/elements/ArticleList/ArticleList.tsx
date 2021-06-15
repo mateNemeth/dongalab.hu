@@ -8,7 +8,7 @@ const ArticleList = ({ content }: { content: ArticleListElement }): JSX.Element 
       <SectionTitle title={content.title} />
       <div className="text-center py-4 px-3 my-0 mx-auto shadow-articleList-sm md:shadow-articleList-lg max-w-screen-xl md:w-11/12">
         {content.articles.map((article, idx) => (
-          <Article article={article} key={article.id} odd={idx % 2 === 0} />
+          <Article article={article} key={article.id} articleIndex={idx} />
         ))}
       </div>
     </div>
