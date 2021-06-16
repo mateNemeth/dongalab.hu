@@ -23,6 +23,10 @@ module.exports = {
       },
       transitionProperty: {
          'height': 'height',
+      },
+      height: {
+        "55vh": "55vh",
+        "30vh": "30vh"
       }
     },
   },

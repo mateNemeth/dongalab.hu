@@ -1,5 +1,11 @@
 import { ImageProps } from './global'
 
+export interface ParallaxElement {
+  id: number
+  image: ImageProps
+  __component: 'elements.parallax'
+}
+
 export interface HeroElement {
   id: number
   text: string
@@ -23,7 +29,7 @@ export interface ArticleListElement {
   __component: 'elements.article-list'
 }
 
-export type SectionContent = HeroElement | ArticleListElement
+export type SectionContent = HeroElement | ArticleListElement | ParallaxElement
 
 export interface Section {
   id: number

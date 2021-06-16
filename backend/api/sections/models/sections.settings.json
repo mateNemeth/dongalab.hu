@@ -26,7 +26,8 @@
       "type": "dynamiczone",
       "components": [
         "elements.hero",
-        "elements.article-list"
+        "elements.article-list",
+        "elements.parallax"
       ]
     },
     "order": {

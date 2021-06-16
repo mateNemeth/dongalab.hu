@@ -74,7 +74,11 @@ const Article = ({ article, articleIndex }: { article: ArticleElement; articleIn
             {!showDetails ? 'Részletek' : 'Bezárás'}
           </button>
         </div>
-        <div className="order-3" style={{ display: 'none', height: '0', transition: 'height 350ms ease-in-out' }} ref={ref}>
+        <div
+          className="order-3 w-full"
+          style={{ display: 'none', height: '0', transition: 'height 350ms ease-in-out' }}
+          ref={ref}
+        >
           {renderArticleDetails()}
         </div>
       </article>

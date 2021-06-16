@@ -25,6 +25,28 @@ module.exports = ({
       ],
       // shouldNotGroupWhenFull: true
   },
+  link: {
+    decorators: {
+      toggleNewWindow: {
+        mode: 'manual',
+        label: "New window",
+        attributes: {
+          target: "_blank",
+          attributes: {
+            target: '_blank',
+            rel: 'noopener noreferrer'
+          }
+        }
+      },
+      detectPdf: {
+        mode: 'automatic',
+        callback: url => url.endsWith( '.pdf' ),
+        attributes: {
+            "data-icon": 'pdf'
+        }
+      }
+    }
+  },
   image: {
       styles: [
         //   'alignLeft',
