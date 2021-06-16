@@ -1,7 +1,7 @@
 import Navbar from '@/components/layout/Navbar/Navbar'
 import SectionComponent from '@/components/layout/SectionComponent/SectionComponent'
 import Footer from '@/components/layout/Footer/Footer'
-import { ImageProps } from 'model/global'
+import { ImageProps, GlobalProps } from 'model/global'
 import { NavLinkProps } from 'model/navbar'
 import { Section } from 'model/sections'
 import { GetStaticProps } from 'next'
@@ -28,11 +28,11 @@ export default function Home({ sections, logo }: { sections: Section[]; logo: Im
 
 export const getStaticProps: GetStaticProps = async () => {
   const sections = await getData<Section[]>('/sections')
-  // const global = await getData<GlobalProps>('/global')
+  const global = await getData<GlobalProps>('/global')
   return {
     props: {
       sections,
-      // logo: global.logo,
+      logo: global.logo,
     },
   }
 }
