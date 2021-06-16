@@ -27,13 +27,19 @@
       "components": [
         "elements.hero",
         "elements.article-list",
-        "elements.parallax"
+        "elements.parallax",
+        "elements.simple-text",
+        "elements.testimonial-list",
+        "elements.iconlink"
       ]
     },
     "order": {
       "type": "integer",
       "required": true,
       "unique": false
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

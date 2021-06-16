@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_link_iconlinks",
+  "info": {
+    "name": "iconlink",
+    "icon": "icons",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "iconcode": {
+      "type": "string",
+      "required": true,
+      "regex": "fa.?\\sfa-[a-zA-Z0-9-]+"
+    }
+  }
+}

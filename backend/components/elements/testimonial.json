@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_elements_testimonials",
+  "info": {
+    "name": "testimonial",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "quote_from": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

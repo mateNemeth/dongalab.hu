@@ -1,7 +1,7 @@
 {
   "collectionName": "components_elements_article_lists",
   "info": {
-    "name": "article_list",
+    "name": "article list",
     "icon": "newspaper",
     "description": ""
   },
@@ -11,10 +11,6 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.article"
-    },
-    "title": {
-      "type": "string",
-      "required": true
     }
   }
 }

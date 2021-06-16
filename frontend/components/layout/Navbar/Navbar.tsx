@@ -63,7 +63,7 @@ const Navbar = ({ navData }: { navData: NavbarProps }): JSX.Element => {
     <>
       <nav className="fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between px-4 py-3 bg-cream-light z-50">
         <a href="/">
-          <img src={navData.logo.formats.small.url} alt={navData.logo.alternativeText} width="140" />
+          <img src={navData.logo?.formats.small.url} alt={navData.logo?.alternativeText} width="140" />
         </a>
 
         <div className="md:hidden">

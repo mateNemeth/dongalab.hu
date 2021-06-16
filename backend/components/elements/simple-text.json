@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_elements_simple_text",
+  "info": {
+    "name": "simple text",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

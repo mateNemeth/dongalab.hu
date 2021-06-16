@@ -9,6 +9,7 @@ module.exports = {
           dark: "#ce800c",
           hero: "#f90"
         },
+        facebookBlue: "#3b5998"
       },
       fontFamily: {
         "annie": ["Annie Use Your Telescope", "cursive"]

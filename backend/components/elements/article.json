@@ -7,10 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "summary": {
       "type": "text",
       "required": true
@@ -28,6 +24,10 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "title": {
+      "type": "string",
+      "required": true
     }
   }
 }

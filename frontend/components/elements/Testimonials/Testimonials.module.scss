@@ -1,0 +1,20 @@
+.dot {
+  @apply h-5 w-5 cursor-pointer my-0 mx-1 flex justify-center items-center ;
+
+  &::before {
+    content: "";
+    height: 6px;
+    width: 6px;
+    background-color: #d4d4d4;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+  }
+
+  &:hover::before {
+    background-color: #454545;
+  }
+  
+  &[data-active="true"]::before {
+    background-color: #454545;
+  }
+}

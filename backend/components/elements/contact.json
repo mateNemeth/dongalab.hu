@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_elements_contacts",
+  "info": {
+    "name": "contact",
+    "icon": "laptop",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "iconlink": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.iconlink"
+    }
+  }
+}
