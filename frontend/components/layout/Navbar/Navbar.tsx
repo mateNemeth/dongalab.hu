@@ -43,7 +43,6 @@ const Navbar = ({ navData }: { navData: NavbarProps }): JSX.Element => {
       const section = sections[i]
       // GetBoundingClientRect returns values relative to viewport
       if (section.getBoundingClientRect().top - 500 < 0) {
-        // console.log(section.getBoundingClientRect())
         currentSectionId = section.id
         continue
       }

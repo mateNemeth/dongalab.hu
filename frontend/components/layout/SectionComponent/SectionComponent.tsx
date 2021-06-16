@@ -9,7 +9,6 @@ import { Section, SectionContent } from 'model/sections'
 
 const SectionComponent = ({ section }: { section: Section }): JSX.Element => {
   const renderContent = (content: SectionContent) => {
-    console.log(content)
     switch (content.__component) {
       case 'elements.hero':
         return <Hero key={content.__component + content.id} content={content} />
