@@ -29,6 +29,7 @@ const Testimonials = ({ testimonials }: { testimonials: TestimonialElement[] }):
             onKeyPress={(e) => handleKeyPress(e, testimonial.id)}
             tabIndex={0}
             role="button"
+            aria-label="Toggle testimonial"
             key={testimonial.id}
             onClick={() => handleSetClick(testimonial.id)}
             className={styles.dot}

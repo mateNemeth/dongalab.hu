@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="HU">
         <Head>
           <meta property="og:title" content="Dongaláb... azaz, azok a csodás lábikók! :)" key="title" />
           <meta
