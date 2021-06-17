@@ -4,7 +4,7 @@ import Image from 'next/image'
 const Hero = ({ content }: { content: HeroElement }): JSX.Element => {
   return (
     <div
-      className="bg-fixed bg-center bg-no-repeat bg-cover h-screen opacity-75 text-cream-hero flex flex-col justify-center"
+      className="bg-center bg-no-repeat bg-cover md:bg-fixed h-screen opacity-75 text-cream-hero flex flex-col justify-center"
       style={{ backgroundImage: `url(${content.background.formats.large.url})` }}
     >
       <div className="bg-black bg-opacity-75 flex justify-center w-full align-bottom">
