@@ -16,7 +16,7 @@ class MyDocument extends Document {
             content="Minden ami dongaláb. Tünetei, ajánlott eszközök, cipők, gyógytorna, kezelés, műtét, kedvezmények. Az összes információ egy helyen."
             key="description"
           />
-          <meta property="og:image" content="/og-image.jpeg" />
+          <meta property="og:image" content="/og-image.png" />
           <meta property="og:url" content="https://dongalab.hu" />
           <title>Dongaláb... azaz azok a csodás lábikók! :)</title>
           <meta
