@@ -10,6 +10,20 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta property="og:title" content="Dongaláb... azaz, azok a csodás lábikók! :)" key="title" />
+          <meta
+            property="og:description"
+            content="Minden ami dongaláb. Tünetei, ajánlott eszközök, cipők, gyógytorna, kezelés, műtét, kedvezmények. Az összes információ egy helyen."
+            key="description"
+          />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/matenemeth/image/upload/v1623873541/large_index_min_9f93c08483.jpg"
+          />
+          <meta
+            name="keywords"
+            content="dongaláb, achilles, ponseti, összekötött sín, gyógytorna, műtét, ortopédia, kezelés, cipő"
+          />
           <link
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
