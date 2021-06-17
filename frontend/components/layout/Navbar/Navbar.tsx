@@ -3,12 +3,21 @@ import { throttle } from 'utils/throttle'
 import { NavbarProps, NavLinkProps } from 'model/navbar'
 import { scrollTo } from 'utils/scrollTo'
 
-const NavLink = ({ navLink, active }: { navLink: NavLinkProps; active: boolean }): JSX.Element => {
+const NavLink = ({
+  navLink,
+  active,
+  toggleNavbar,
+}: {
+  navLink: NavLinkProps
+  active: boolean
+  toggleNavbar: () => void
+}): JSX.Element => {
   const handleClick = () => {
     const target = document.getElementById(navLink.sectionId)
     const { scrollingElement } = document
     if (!target || !scrollingElement) return
     scrollTo(scrollingElement, target, 600)
+    toggleNavbar()
   }
 
   return (
@@ -53,6 +62,10 @@ const Navbar = ({ navData }: { navData: NavbarProps }): JSX.Element => {
     setActiveSection(currentSectionId)
   })
 
+  const toggleNavbar = () => {
+    setNavbarOpen((prev) => !prev)
+  }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScrollPositionChanged)
     return () => window.removeEventListener('scroll', handleScrollPositionChanged)
@@ -66,7 +79,7 @@ const Navbar = ({ navData }: { navData: NavbarProps }): JSX.Element => {
         </a>
 
         <div className="md:hidden">
-          <button onClick={() => setNavbarOpen(!navbarOpen)}>
+          <button onClick={toggleNavbar}>
             {navbarOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -81,7 +94,7 @@ const Navbar = ({ navData }: { navData: NavbarProps }): JSX.Element => {
         <div className={'md:flex w-full pt-4 md:w-auto md:pt-0 flex-grow items-center' + (navbarOpen ? ' flex' : ' hidden')}>
           <ul className="flex flex-col md:flex-row list-none md:ml-auto">
             {navData.navlinks.map((link) => (
-              <NavLink navLink={link} key={link.id} active={activeSection === link.sectionId} />
+              <NavLink navLink={link} key={link.id} active={activeSection === link.sectionId} toggleNavbar={toggleNavbar} />
             ))}
           </ul>
         </div>
