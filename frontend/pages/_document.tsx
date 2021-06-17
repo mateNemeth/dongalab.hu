@@ -31,11 +31,20 @@ class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
           <link
-            rel="stylesheet"
+            rel="preload"
             href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
             integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
             crossOrigin="anonymous"
+            as="style"
           />
+          <noscript>
+            <link
+              rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+              integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+              crossOrigin="anonymous"
+            />
+          </noscript>
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`} />
           <script
             dangerouslySetInnerHTML={{
