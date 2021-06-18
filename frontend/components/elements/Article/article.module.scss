@@ -3,6 +3,14 @@
   border-bottom: 2px dotted theme('colors.cream.light');
 }
 
+.imageContainer {
+  @apply w-11/12 max-w-article-img md:max-w-full md:h-auto mx-auto my-4 rounded-lg shadow-article-img overflow-hidden;
+  
+  > div {
+    display: block !important;
+  }
+}
+
 .dynamicContainer {
   text-align: left;
   width: 100%;

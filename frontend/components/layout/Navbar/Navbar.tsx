@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { throttle } from 'utils/throttle'
 import { NavbarProps, NavLinkProps } from 'model/navbar'
 import { scrollTo } from 'utils/scrollTo'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const NavLink = ({
   navLink,
@@ -74,9 +76,11 @@ const Navbar = ({ navData }: { navData: NavbarProps }): JSX.Element => {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 flex flex-wrap items-center justify-between px-4 py-3 bg-cream-light z-50">
-        <a href="/">
-          <img src={navData.logo?.formats.small.url} alt={navData.logo?.alternativeText} width="140" />
-        </a>
+        <Link href="/">
+          <a>
+            <Image src={navData.logo?.formats.small.url} alt={navData.logo?.alternativeText} width={140} height={30} />
+          </a>
+        </Link>
 
         <div className="md:hidden">
           <button onClick={toggleNavbar}>

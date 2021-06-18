@@ -3,6 +3,7 @@ import type { AppProps as NextAppProps } from 'next/app'
 // import App from 'next/app'
 // import { getData } from '../utils/api'
 import { GlobalProps } from '../model/global'
+import Head from 'next/head'
 import '@/styles/index.css'
 
 type AppProps<P> = {
@@ -12,6 +13,9 @@ type AppProps<P> = {
 const MyApp = ({ Component, pageProps }: AppProps<GlobalProps>): JSX.Element => {
   return (
     <>
+      <Head>
+        <title>Dongaláb... azaz azok a csodás lábikók! :)</title>
+      </Head>
       <Component {...pageProps} />
     </>
   )

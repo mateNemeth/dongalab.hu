@@ -1,6 +1,7 @@
 import { ArticleElement } from 'model/sections'
 import { useRef, useState } from 'react'
 import { scrollTo } from 'utils/scrollTo'
+import Image from 'next/image'
 
 import styles from './article.module.scss'
 
@@ -57,11 +58,14 @@ const Article = ({ article, articleIndex }: { article: ArticleElement; articleIn
       {articleIndex !== 0 ? <hr className="border-none h-px bg-gradient-to-r from-white via-gray-600 to-white" /> : null}
       <article className="md:flex justify-center items-center flex-wrap md:px-4 md:py-8 md:w-5/6 md:mx-auto">
         <div className={'md:w-2/4' + (articleIndex % 2 === 0 ? ' md:order-2' : '')}>
-          <img
-            src={article.article_image.url}
-            alt={article.article_image.alternativeText}
-            className="w-11/12 max-w-article-img md:max-w-full md:h-auto mx-auto my-4 rounded-lg shadow-article-img"
-          />
+          <div className={styles.imageContainer}>
+            <Image
+              width={article.article_image.width}
+              height={article.article_image.height}
+              src={article.article_image.url}
+              alt={article.article_image.alternativeText}
+            />
+          </div>
         </div>
         <div className="md:w-2/4">
           <h3 className="text-cream-dark font-bold text-lg md:text-3xl md:p-4">{article.title}</h3>

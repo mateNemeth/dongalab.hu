@@ -22,7 +22,6 @@ class MyDocument extends Document {
           />
           <meta property="og:image" content="/og-image.png" />
           <meta property="og:url" content="https://dongalab.hu" />
-          <title>Dongaláb... azaz azok a csodás lábikók! :)</title>
           <meta
             name="keywords"
             content="dongaláb, achilles, ponseti, összekötött sín, gyógytorna, műtét, ortopédia, kezelés, cipő"
@@ -34,7 +33,7 @@ class MyDocument extends Document {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
-          <script src="https://kit.fontawesome.com/5999fbffbd.js" crossOrigin="anonymous"></script>
+          <script async src="https://kit.fontawesome.com/5999fbffbd.js" crossOrigin="anonymous"></script>
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`} />
           <script
             dangerouslySetInnerHTML={{
