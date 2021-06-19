@@ -42,11 +42,14 @@ const Article = ({ article, articleIndex }: { article: ArticleElement; articleIn
         setAnimating(false)
       }, 350)
     } else {
-      element.style.height = '0'
       scrollTo(document.scrollingElement, element.parentElement, 600)
+      element.style.height = '0'
 
       setTimeout(() => {
         element.style.display = 'none'
+      }, 0)
+
+      setTimeout(() => {
         setShowDetails((prev) => !prev)
         setAnimating(false)
       }, 350)
