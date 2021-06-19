@@ -82,7 +82,7 @@ const Article = ({ article, articleIndex }: { article: ArticleElement; articleIn
           </button>
         </div>
         <div
-          className="order-3 w-full"
+          className="order-3 w-full overflow-hidden"
           style={{ display: 'none', height: '0', transition: 'height 350ms ease-in-out' }}
           ref={ref}
         >
