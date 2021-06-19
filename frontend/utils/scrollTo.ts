@@ -5,12 +5,7 @@ export const scrollTo = (scrollingElement: Element, target: HTMLElement, duratio
 
   setTimeout(function () {
     scrollingElement.scrollTop = scrollingElement.scrollTop + perTick
-    if (
-      scrollingElement.scrollTop === target.offsetTop ||
-      scrollingElement.scrollTop === 0 ||
-      scrollingElement.scrollTop >= scrollingElement.scrollHeight - scrollingElement.clientHeight
-    )
-      return
+    if (scrollingElement.scrollTop === target.offsetTop || scrollingElement.scrollTop === 0) return
     scrollTo(scrollingElement, target, duration - 10)
   }, 10)
 }
