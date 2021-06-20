@@ -1,4 +1,4 @@
-export const throttle = (fn: { (arg0: unknown): void; (...args: unknown[]): void; }, wait = 200): (params: unknown) => void => {
+export const throttle = (fn: { (arg0: unknown): void; (...args: unknown[]): void }, wait = 200): ((params: unknown) => void) => {
   let timer: NodeJS.Timeout;
   let time = Date.now();
 

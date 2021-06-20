@@ -1,15 +1,15 @@
-import { ArticleElement } from 'model/sections'
-import { useRef, useState } from 'react'
-import { scrollTo } from 'utils/scrollTo'
-import Image from 'next/image'
+import { ArticleElement } from 'model/sections';
+import { useRef, useState } from 'react';
+import { scrollTo } from 'utils/scrollTo';
+import Image from 'next/image';
 
-import styles from './article.module.scss'
+import styles from './article.module.scss';
 
 const Article = ({ article, articleIndex }: { article: ArticleElement; articleIndex: number }): JSX.Element => {
-  const [showDetails, setShowDetails] = useState<boolean>(false)
-  const [animating, setAnimating] = useState<boolean>(false)
+  const [showDetails, setShowDetails] = useState<boolean>(false);
+  const [animating, setAnimating] = useState<boolean>(false);
 
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null);
 
   const renderArticleDetails = (): JSX.Element => {
     return (
@@ -25,36 +25,36 @@ const Article = ({ article, articleIndex }: { article: ArticleElement; articleIn
           </svg>
         </button>
       </>
-    )
-  }
+    );
+  };
 
   const handleToggleDetails = () => {
-    const element = ref.current
-    if (!element || !document.scrollingElement || !element.parentElement) return
-    setAnimating(true)
+    const element = ref.current;
+    if (!element || !document.scrollingElement || !element.parentElement) return;
+    setAnimating(true);
 
     if (!showDetails) {
-      element.style.display = 'block'
-      element.style.height = element.scrollHeight + 'px'
+      element.style.display = 'block';
+      element.style.height = element.scrollHeight + 'px';
 
       setTimeout(() => {
-        setShowDetails((prev) => !prev)
-        setAnimating(false)
-      }, 350)
+        setShowDetails((prev) => !prev);
+        setAnimating(false);
+      }, 350);
     } else {
-      scrollTo(document.scrollingElement, element.parentElement, 600)
-      element.style.height = '0'
+      scrollTo(document.scrollingElement, element.parentElement, 600);
+      element.style.height = '0';
 
       setTimeout(() => {
-        element.style.display = 'none'
-      }, 0)
+        element.style.display = 'none';
+      }, 0);
 
       setTimeout(() => {
-        setShowDetails((prev) => !prev)
-        setAnimating(false)
-      }, 350)
+        setShowDetails((prev) => !prev);
+        setAnimating(false);
+      }, 350);
     }
-  }
+  };
 
   return (
     <>
@@ -90,7 +90,7 @@ const Article = ({ article, articleIndex }: { article: ArticleElement; articleIn
         </div>
       </article>
     </>
-  )
-}
+  );
+};
 
-export default Article
+export default Article;

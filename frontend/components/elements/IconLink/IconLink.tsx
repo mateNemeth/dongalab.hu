@@ -1,4 +1,4 @@
-import { IconLinkElement } from 'model/sections'
+import { IconLinkElement } from 'model/sections';
 
 const IconLink = ({ content }: { content: IconLinkElement }): JSX.Element => {
   return (
@@ -15,7 +15,7 @@ const IconLink = ({ content }: { content: IconLinkElement }): JSX.Element => {
         {' '}
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default IconLink
+export default IconLink;

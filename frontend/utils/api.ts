@@ -1,5 +1,5 @@
 export function getStrapiURL(path: string): string {
-  return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'}${path}`
+  return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'}${path}`;
 }
 
 export async function getData<T>(path: string, options: RequestInit = {}): Promise<T> {
@@ -7,18 +7,18 @@ export async function getData<T>(path: string, options: RequestInit = {}): Promi
     headers: {
       'Content-Type': 'application/json',
     },
-  }
+  };
   const mergedOptions = {
     ...defaultOptions,
     ...options,
-  }
-  const requestUrl = getStrapiURL(path)
-  const response = await fetch(requestUrl, mergedOptions)
+  };
+  const requestUrl = getStrapiURL(path);
+  const response = await fetch(requestUrl, mergedOptions);
 
   if (!response.ok) {
-    console.error(response.statusText)
-    throw new Error(`An error occured please try again`)
+    console.error(response.statusText);
+    throw new Error(`An error occured please try again`);
   }
-  const data = await response.json()
-  return data
+  const data = await response.json();
+  return data;
 }

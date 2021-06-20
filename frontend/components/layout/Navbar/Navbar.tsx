@@ -1,26 +1,26 @@
-import { useEffect, useState } from 'react'
-import { throttle } from 'utils/throttle'
-import { NavbarProps, NavLinkProps } from 'model/navbar'
-import { scrollTo } from 'utils/scrollTo'
-import Image from 'next/image'
-import Link from 'next/link'
+import { useEffect, useState } from 'react';
+import { throttle } from 'utils/throttle';
+import { NavbarProps, NavLinkProps } from 'model/navbar';
+import { scrollTo } from 'utils/scrollTo';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const NavLink = ({
   navLink,
   active,
   toggleNavbar,
 }: {
-  navLink: NavLinkProps
-  active: boolean
-  toggleNavbar: () => void
+  navLink: NavLinkProps;
+  active: boolean;
+  toggleNavbar: () => void;
 }): JSX.Element => {
   const handleClick = () => {
-    const target = document.getElementById(navLink.sectionId)
-    const { scrollingElement } = document
-    if (!target || !scrollingElement) return
-    scrollTo(scrollingElement, target, 600)
-    toggleNavbar()
-  }
+    const target = document.getElementById(navLink.sectionId);
+    const { scrollingElement } = document;
+    if (!target || !scrollingElement) return;
+    scrollTo(scrollingElement, target, 600);
+    toggleNavbar();
+  };
 
   return (
     <li>
@@ -35,43 +35,43 @@ const NavLink = ({
         </span>
       </button>
     </li>
-  )
-}
+  );
+};
 
 const Navbar = ({ navData }: { navData: NavbarProps }): JSX.Element => {
-  const [navbarOpen, setNavbarOpen] = useState(false)
-  const sectionIds = navData.navlinks.map((l) => l.sectionId)
-  const [activeSection, setActiveSection] = useState(sectionIds[0] ?? null)
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const sectionIds = navData.navlinks.map((l) => l.sectionId);
+  const [activeSection, setActiveSection] = useState(sectionIds[0] ?? null);
 
   const handleScrollPositionChanged = throttle(() => {
-    const sections: HTMLElement[] = []
+    const sections: HTMLElement[] = [];
     sectionIds.forEach((sectionId) => {
-      const elem = document.getElementById(sectionId)
-      if (elem) sections.push(elem)
-    })
-    let currentSectionId = activeSection
+      const elem = document.getElementById(sectionId);
+      if (elem) sections.push(elem);
+    });
+    let currentSectionId = activeSection;
     for (let i = 0; i < sections.length; i++) {
-      const section = sections[i]
+      const section = sections[i];
       // GetBoundingClientRect returns values relative to viewport
       if (section.getBoundingClientRect().top - 500 < 0) {
-        currentSectionId = section.id
-        continue
+        currentSectionId = section.id;
+        continue;
       }
       // No need to continue loop, if last element has been detected
-      break
+      break;
     }
 
-    setActiveSection(currentSectionId)
-  })
+    setActiveSection(currentSectionId);
+  });
 
   const toggleNavbar = () => {
-    setNavbarOpen((prev) => !prev)
-  }
+    setNavbarOpen((prev) => !prev);
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScrollPositionChanged)
-    return () => window.removeEventListener('scroll', handleScrollPositionChanged)
-  })
+    window.addEventListener('scroll', handleScrollPositionChanged);
+    return () => window.removeEventListener('scroll', handleScrollPositionChanged);
+  });
 
   return (
     <>
@@ -104,7 +104,7 @@ const Navbar = ({ navData }: { navData: NavbarProps }): JSX.Element => {
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

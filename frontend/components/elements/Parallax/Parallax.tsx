@@ -1,4 +1,4 @@
-import { ParallaxElement } from 'model/sections'
+import { ParallaxElement } from 'model/sections';
 
 const Parallax = ({ content }: { content: ParallaxElement }): JSX.Element => {
   return (
@@ -6,7 +6,7 @@ const Parallax = ({ content }: { content: ParallaxElement }): JSX.Element => {
       className="mt-16 bg-center bg-no-repeat bg-cover h-30vh md:h-55vh md:bg-fixed"
       style={{ backgroundImage: `url(${content.image.formats.large.url})` }}
     ></div>
-  )
-}
+  );
+};
 
-export default Parallax
+export default Parallax;

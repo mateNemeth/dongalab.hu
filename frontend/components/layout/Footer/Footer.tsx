@@ -11,7 +11,7 @@ const Footer = (): JSX.Element => {
         </a>
       </p>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

@@ -1,5 +1,5 @@
-import { ArticleListElement } from 'model/sections'
-import Article from '../Article/Article'
+import { ArticleListElement } from 'model/sections';
+import Article from '../Article/Article';
 
 const ArticleList = ({ content }: { content: ArticleListElement }): JSX.Element => {
   return (
@@ -10,7 +10,7 @@ const ArticleList = ({ content }: { content: ArticleListElement }): JSX.Element 
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ArticleList
+export default ArticleList;
