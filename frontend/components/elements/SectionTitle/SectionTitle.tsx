@@ -7,6 +7,6 @@ const SectionTitle = ({ title }: { title: string }): JSX.Element => (
       {title}
     </h2>
   </div>
-)
+);
 
-export default SectionTitle
+export default SectionTitle;

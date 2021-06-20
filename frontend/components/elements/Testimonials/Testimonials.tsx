@@ -1,23 +1,23 @@
-import { TestimonialElement } from 'model/sections'
-import { useState } from 'react'
+import { TestimonialElement } from 'model/sections';
+import { useState } from 'react';
 
-import styles from './Testimonials.module.scss'
+import styles from './Testimonials.module.scss';
 
 const Testimonials = ({ testimonials }: { testimonials: TestimonialElement[] }): JSX.Element => {
-  const [current, setCurrent] = useState(testimonials[0])
+  const [current, setCurrent] = useState(testimonials[0]);
 
   const handleSetClick = (id: number) => {
-    const found = testimonials.find((t) => t.id === id)
+    const found = testimonials.find((t) => t.id === id);
     if (found) {
-      setCurrent(found)
+      setCurrent(found);
     }
-  }
+  };
 
   const handleKeyPress = (event: React.KeyboardEvent, id: number) => {
     if (event.key === 'Enter') {
-      handleSetClick(id)
+      handleSetClick(id);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col justify-center items-center w-11/12 max-w-screen-lg mx-auto shadow-articleList-sm p-6">
@@ -38,7 +38,7 @@ const Testimonials = ({ testimonials }: { testimonials: TestimonialElement[] }):
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

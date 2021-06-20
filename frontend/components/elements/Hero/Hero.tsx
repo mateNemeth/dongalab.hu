@@ -1,5 +1,5 @@
-import { HeroElement } from 'model/sections'
-import Image from 'next/image'
+import { HeroElement } from 'model/sections';
+import Image from 'next/image';
 
 const Hero = ({ content }: { content: HeroElement }): JSX.Element => {
   return (
@@ -12,7 +12,7 @@ const Hero = ({ content }: { content: HeroElement }): JSX.Element => {
       </div>
       <h3 className="text-2xl md:text-4xl bg-black bg-opacity-75 text-center font-annie pb-4">{content.text}</h3>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
