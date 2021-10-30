@@ -6,7 +6,7 @@
 .imageContainer {
   @apply w-11/12 max-w-article-img md:max-w-full md:h-auto mx-auto my-4 rounded-lg shadow-article-img overflow-hidden;
   
-  > div {
+  > span {
     display: block !important;
   }
 }
