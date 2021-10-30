@@ -1,0 +1,15 @@
+.invalid {
+  border: 1px solid red;
+  background-color: rgb(255, 230, 230);
+}
+
+.errorFeedBack {
+  font-size: 10px;
+  color: red;
+  bottom: -7px;
+}
+
+.loading {
+  background-color: #d1a35e;
+  cursor: progress;
+}
