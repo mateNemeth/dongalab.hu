@@ -29,4 +29,4 @@ jobs:
         with:
           context: ./backend
           push: true
-          tags: user/app:latest
+          tags: matenemeth/dongalab-admin:latest
