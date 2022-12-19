@@ -13,6 +13,7 @@ RUN npm install --production=true --frozen-lockfile
 # Copy all for build and release cache if package.json update
 COPY . .
 ENV NODE_ENV=production
+ENV DATABASE_URL=postgres://postgres:postgres@dongalab-db:5432/dongalab
 
 RUN npm run build
 
